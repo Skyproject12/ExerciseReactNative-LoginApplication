@@ -1,18 +1,13 @@
 import React, {Component} from 'react';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
-import HomeScreen from './app/component/Home';
-import DashboardScreen from './app/component/Dashboard';
+import HomeScreen from '@component/Login';
+import DashboardScreen from '@component/Dashboard';
 
-const RootStack = createStackNavigator(
-  {
-    Home: HomeScreen,
-    Dashboard: DashboardScreen,
-  },
-  {
-    initialRouteName: 'Home',
-  },
-);
+const RootStack = createStackNavigator({
+  Login: HomeScreen,
+  Dashboard: DashboardScreen,
+});
 
 const AppContainer = createAppContainer(RootStack);
 

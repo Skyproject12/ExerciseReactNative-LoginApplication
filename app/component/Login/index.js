@@ -3,24 +3,38 @@ import {Text, View, TextInput, Button} from 'react-native';
 import styles from './style';
 
 class HomeScreen extends Component {
-  goToDashboardScreen() {
-    this.props.navigation.navigate('Dashboard');
-  }
-
   state = {
     username: '',
     password: '',
+    status: false,
+  };
+
+  static navigationOptions = {
+    headerVisible: false,
   };
 
   checkLogin() {
     const {username, password} = this.state;
     if (username === 'admin' && password === 'admin') {
-      console.log('masuk');
+      this.setState({
+        status: false,
+      });
+      this.props.navigation.navigate('Dashboard', {name: 'sumendra'});
     }
-    console.log('hasilnya', username, password);
+    this.setState({
+      status: true,
+    });
   }
+
   render() {
-    const {heading, input, viewButton, description} = styles;
+    const {
+      heading,
+      input,
+      viewButton,
+      description,
+      messageText,
+      messageView,
+    } = styles;
     return (
       <View style>
         <Text style={heading}>Login</Text>
@@ -38,6 +52,13 @@ class HomeScreen extends Component {
         />
         <View style={viewButton}>
           <Button title="Login" onPress={() => this.checkLogin()} />
+        </View>
+        <View style={messageView}>
+          {this.state.status && (
+            <Text style={messageText}>
+              Tolong Check Kembali username dan password
+            </Text>
+          )}
         </View>
       </View>
     );

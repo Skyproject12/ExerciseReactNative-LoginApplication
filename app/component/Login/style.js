@@ -23,4 +23,16 @@ export default StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
   },
+  messageText: {
+    fontSize: 10,
+    color: 'white',
+    padding: 10,
+  },
+  messageView: {
+    backgroundColor: '#03A9F4',
+    marginLeft: 20,
+    marginRight: 20,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
 });

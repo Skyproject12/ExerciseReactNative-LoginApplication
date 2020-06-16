@@ -3,9 +3,10 @@ import {Text, View} from 'react-native';
 
 class DashboardScreen extends Component {
   render() {
+    // const {params} = this.props.navigation.state;
     return (
       <View>
-        <Text>Dashboard</Text>
+        <Text>da</Text>
       </View>
     );
   }
